@@ -1,0 +1,94 @@
+#progress {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 3px;
+	width: 100%;
+	background-color: gold;
+	animation: grow linear;
+	transform-origin: 0;
+	animation-timeline: scroll();
+	z-index: 9999;
+	
+	+ #arrow {
+		position: fixed;
+		top: 1rem;
+		left: 6rem;
+		width: 40px;
+		height: 40px;
+		background-color: gold;
+		clip-path: polygon(50% 0%, 50% 0%, 0% 100%, 100% 100%);
+		animation: move linear;
+		animation-timeline: scroll();
+		z-index: 9999;
+	}
+}
+
+@keyframes grow {
+	from {
+		transform: scaleX(0);
+	}
+	to {
+		transform: scaleX(1);
+	}
+}
+
+@keyframes move {
+	from {
+		left: 1rem;
+		transform: rotate(-45deg);
+	}
+	10% {
+		left: 9vw;
+		transform: rotate(0);
+	}
+	90% {
+		left: 86vw;
+		transform: rotate(0);
+	}
+	to {
+		left: calc(100vw - 4rem);
+		transform: rotate(45deg);
+	}
+}
+
+header {
+	display: flex;
+	position: sticky;
+	top: 0;
+	background-color: #141414;
+	align-items: center;
+	gap: 1.5rem;
+	padding: 1rem 2rem;
+	font-size: 0.8rem;
+
+	nav {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	> a:first-child {
+		margin-right: auto;
+	}
+}
+
+section {
+	min-height: 100dvh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+	font-weight: bold;
+	color: #fff;
+}
+
+footer {
+	background-color: #141414;
+	min-height: 8rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.25rem;
+	color: #fff;
+}
