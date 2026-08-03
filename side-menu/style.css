@@ -1,26 +1,35 @@
-.page {
-	--menu-open: closed;
+:root {
+	--break-point: if(
+		media(width <= 400px): 'sm';
+		media(width <= 650px): 'md';
+		else: 'lg';
+	);
+	--menu-state: closed;
+}
 
+.page {
 	display: grid;
 	grid-template-areas:
 		'header header'
 		'aside main';
 	grid-template-rows: 3rem 1fr;
 	transition: all .25s linear;
-
-	&:has(#menu-trigger-control:focus) {
-        --menu-open: open;
-    }
-
 	grid-template-columns: if(
-		style(--menu-open: open): 12rem 1fr;
+		style(--menu-state: open): if(
+			style(--break-point: 'sm'): 100dvw;
+			else: 12rem 1fr;
+		);		
 		else: 3rem 1fr;
 	);
+
+	&:has(#menu-trigger-control:focus) {
+        --menu-state: open;
+    }
 }
 
 aside {
 	grid-area: aside;
-	background-color: rgba(51, 67, 206, 0.87);
+	background-image: linear-gradient(to bottom, rgba(51, 67, 206, 0.87), rgba(51, 67, 206, 0.4));
 	height: 100dvh;
 	width: 100%;
 	display: flex;
@@ -30,8 +39,8 @@ aside {
 	position: sticky;
 	top: 0;
 	animation: if(
-		style(--menu-open: open): menu-overshoot-in .7s cubic-bezier(0.16, 1, 0.3, 1);
-		else: style(--menu-open: open): menu-overshoot-in .7s cubic-bezier(0.16, 1, 0.3, 1);
+		style(--menu-state: open): menu-overshoot-in .7s cubic-bezier(0.16, 1, 0.3, 1);
+		else: style(--menu-state: open): menu-overshoot-in .7s cubic-bezier(0.16, 1, 0.3, 1);
 	);
 
 	svg {
@@ -39,7 +48,7 @@ aside {
 		transition: opacity 0.4s;
 		height: 1.2rem;
 		align-self: if(
-			style(--menu-open: closed): center;
+			style(--menu-state: closed): center;
 			else: start;
 		);
 
@@ -70,7 +79,7 @@ aside {
 				span {
 					font-size: 0.85rem;
 					display: if(
-						style(--menu-open: closed): none;
+						style(--menu-state: closed): none;
 						else: block;
 					);
 				}
@@ -88,7 +97,7 @@ aside {
 						transform-origin: 1rem;
 						animation: grow .2s linear;
 						display: if(
-							style(--menu-open: open): block;
+							style(--menu-state: open): block;
 							else: none;
 						);
 					}
@@ -105,7 +114,7 @@ aside {
 						font-size: 0.8rem;
 						animation: fade-in-left .3s;
 						display: if(
-							style(--menu-open: open): none;
+							style(--menu-state: open): none;
 						);
 					}
 				}
@@ -128,7 +137,7 @@ aside {
 			height: 1.5rem;
 			justify-self: center;
 			display: if(
-				style(--menu-open: open): none;
+				style(--menu-state: open): none;
 				else: block;
 			)
 		}
@@ -137,7 +146,7 @@ aside {
 			height: 1.5rem;
 			justify-self: end;
 			display: if(
-				style(--menu-open: open): block;
+				style(--menu-state: open): block;
 				else: none;
 			)
 		}
@@ -153,46 +162,9 @@ aside {
 			font-size: 0.8rem;
 			animation: fade-in-left .3s;
 			display: if(
-				style(--menu-open: open): none;
+				style(--menu-state: open): none;
 			);
 		}
-	}
-}
-
-@keyframes grow {
-	from {
-		transform: scaleX(0);
-	}
-	to {
-		transform: scaleX(1);
-	}
-}
-
-@keyframes menu-overshoot-in {
-	0% {
-		filter: blur(0);
-		transform: translateX(0);
-	}
-
-	30% {
-		filter: blur(2px);
-		transform: translateX(-64px);
-	}
-
-	100% {
-		filter: blur(0);
-		transform: translateX(0);
-	}
-}
-
-@keyframes fade-in-left {
-	from {
-		opacity: 0;
-		transform: translateX(1rem);
-	}
-	to {
-		opacity: 1;
-		transform: translateX(2rem);
 	}
 }
 
@@ -232,14 +204,14 @@ main {
 
 	.cards-container {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
 		grid-gap: 0.6rem;
 		
 		.card {
-		width: 100%;
-		height: 12rem;
-		background-color: #303030;
-		border-radius: .4rem;
+			width: 100%;
+			height: 12rem;
+			background: linear-gradient(to bottom, #303030, #1b1b1b);
+			border-radius: .4rem;
 		}
 	}
 }
@@ -259,4 +231,41 @@ html {
   	border-radius: 999px;
   	border: 1px solid rgba(255, 255, 255, 0.1);
   }
+}
+
+@keyframes grow {
+	from {
+		transform: scaleX(0);
+	}
+	to {
+		transform: scaleX(1);
+	}
+}
+
+@keyframes menu-overshoot-in {
+	0% {
+		filter: blur(0);
+		transform: translateX(0);
+	}
+
+	30% {
+		filter: blur(2px);
+		transform: translateX(-64px);
+	}
+
+	100% {
+		filter: blur(0);
+		transform: translateX(0);
+	}
+}
+
+@keyframes fade-in-left {
+	from {
+		opacity: 0;
+		transform: translateX(1rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(2rem);
+	}
 }
