@@ -1,0 +1,16 @@
+body {
+	padding: 2rem;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
+	transition: opacity 1s ease-in-out;
+
+	a:hover {
+		opacity: 0.6;
+	}
+}

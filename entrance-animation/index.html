@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Animation on scroll</title>
-	<link rel="stylesheet" href="normalization.css" />
+	<title>Entrance animation</title>
+	<link rel="stylesheet" href="../normalization.css" />
 	<link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -19,6 +19,41 @@
 
 	<section id="section1" style="background-color: #404040">
 		<h2>Section 1</h2>
+
+		<div class="code-container">
+			<pre>
+h2 {
+	<b>animation: reveal 0.5s ease-in-out;
+	animation-timeline: view();
+	animation-range: 0% 40%;</b>
+	...
+}
+
+@keyframes <b>reveal</b> {
+	...
+}</pre>
+
+			<pre>
+.card {
+	<b>animation: reveal-card linear both;
+	animation-timeline: view();</b>
+	...
+
+	&:nth-child(1) {
+		<b>animation-range: 10% 40%;</b>
+	}
+	&:nth-child(2) {
+		<b>animation-range: 18% 40%;</b>
+	}
+	&:nth-child(3) {
+		<b>animation-range: 26% 40%;</b>
+	}
+}
+
+@keyframes <b>reveal-card</b> {
+	...
+}</pre>
+		</div>
 	</section>
 
 	<section id="cards-section" style="background-color: #202020">

@@ -39,16 +39,35 @@
 		transform: rotate(-45deg);
 	}
 	10% {
-		left: 9vw;
+		left: 7vw;
 		transform: rotate(0);
 	}
 	90% {
-		left: 86vw;
+		left: 85vw;
 		transform: rotate(0);
 	}
 	to {
 		left: calc(100vw - 4rem);
 		transform: rotate(45deg);
+	}
+}
+
+.code-container {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+	gap: 1rem;
+	padding: 0 2rem;
+
+	pre {
+		font-size: 0.7rem;
+		background-color: #323232;
+		padding: 0.8rem;
+		height: fit-content;
+
+		b {
+			color: gold;
+		}
 	}
 }
 
@@ -81,6 +100,9 @@ section {
 	font-size: 2rem;
 	font-weight: bold;
 	color: #fff;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 }
 
 footer {

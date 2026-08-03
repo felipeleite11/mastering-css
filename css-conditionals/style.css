@@ -39,6 +39,16 @@
 	}
 }
 
+pre {
+	font-size: 0.7rem;
+	background-color: #323232;
+	padding: 0.8rem;
+
+	b {
+		color: gold;
+	}
+}
+
 header {
 	display: flex;
 	position: sticky;
@@ -67,11 +77,17 @@ section {
 	align-items: center;
 	justify-content: center;
 	font-size: 2rem;
-	font-weight: bold;
 	color: #fff;
 
 	h2 {
 		font-size: 1.8rem;
+		font-weight: bold;
+	}
+
+	p {
+		font-size: 0.9rem;
+		font-weight: normal;
+		margin: 2rem 0 0;
 	}
 }
 

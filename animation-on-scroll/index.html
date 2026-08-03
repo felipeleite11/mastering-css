@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Animation on scroll</title>
-	<link rel="stylesheet" href="normalization.css" />
+	<title>Animate on scroll</title>
+	<link rel="stylesheet" href="../normalization.css" />
 	<link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -23,6 +23,23 @@
 
 	<section id="section1" style="background-color: #202020">
 		<span>Section 1</span>
+
+		<div class="code-container">
+			<pre>
+#progress {
+	<b>position: fixed;
+	animation: grow linear;
+	transform-origin: 0;
+	animation-timeline: scroll();</b>
+	...
+}</pre>
+
+			<pre>
+@keyframes <b>grow</b> {
+	...
+}</pre>
+		</div>
+
 	</section>
 
 	<section id="section2" style="background-color: #404040">

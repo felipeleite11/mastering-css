@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Animation on scroll</title>
-	<link rel="stylesheet" href="normalization.css" />
+	<title>CSS Conditions</title>
+	<link rel="stylesheet" href="../normalization.css" />
 	<link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,6 +18,15 @@
 
 	<section id="cards-section" style="background-color: #202020">
 		<h2>Meus cards</h2>
+
+		<pre>
+grid-template-columns: <b>if(</b>
+	style(--break-point: 'sm'): 1fr;
+	style(--break-point: 'md'): repeat(2, 1fr);
+	<b>else:</b> repeat(3, 1fr);
+<b>)</b>;</pre>
+
+		<p>Resize horizontally to test</p>
 
 		<ul>
 			<li class="card" data-status="success">

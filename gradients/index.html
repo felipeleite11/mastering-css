@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gradients</title>
+	<link rel="stylesheet" href="../normalization.css" />
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div id="progress"></div>
+
+	<div id="arrow"></div>
+
+	<header>
+		<a href="#">Logo</a>
+		<nav>
+			<a href="#gradients">Gradients</a>
+			<a href="#footer">Footer</a>
+		</nav>
+	</header>
+
+	<section id="gradients" style="background-color: #202020">
+		<span>Gradients</span>
+
+		<ul>
+			<li style="display: flex; flex-direction: column; gap: 0.7rem">
+				<button class="gradient-button rounded">
+					<span>Button</span>
+				</button>
+
+				<button class="gradient-button circle">
+					<span>
+						<img 
+							src="icon.svg" 
+							alt="" 
+							style="height: 18px"
+						/>
+					</span>
+				</button>
+			</li>
+			 <li class="gradient-overlay" style="background-image: url(https://picsum.photos/600/400)">
+				<div class="overlay"></div>
+				<span>Gradient on image</span>
+			 </li>
+			<li class="card striped">
+				<span>Striped gradient</span>
+			</li>
+			<li class="card corner-sun">
+				<span>Gradient top left origin</span>
+			</li>
+			<li class="card sunrise">
+				<span>Sunrise gradient</span>
+			</li>
+			<li class="card farthest-corner">
+				<span>Difused light point</span>
+			</li>
+			<li class="card conic">
+				<span>Conic gradient</span>
+			</li>
+			<li>
+				<span class="gradient-text">Gradient on text</span>
+			</li>
+		</ul>
+	</section>
+
+	<footer id="footer">
+		<span>Footer</span>
+	</footer>
+</body>
+</html>

@@ -71,6 +71,28 @@
 	}
 }
 
+.code-container {
+	width: 100%;
+	display: grid;
+	grid-template-columns: if(
+		media(width <= 760px): 1fr;
+		else: repeat(2, 1fr);
+	);
+	gap: 1rem;
+	padding: 0 2rem;
+
+	pre {
+		font-size: 0.7rem;
+		background-color: #323232;
+		padding: 0.8rem;
+		height: fit-content;
+
+		b {
+			color: gold;
+		}
+	}
+}
+
 header {
 	display: flex;
 	position: sticky;
@@ -101,6 +123,9 @@ section {
 	font-size: 2rem;
 	font-weight: bold;
 	color: #fff;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 
 	h2 {
 		font-size: 1.8rem;
