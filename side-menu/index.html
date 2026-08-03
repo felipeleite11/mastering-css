@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Side menu</title>
+	<link rel="stylesheet" href="../normalization.css" />
+	<link rel="stylesheet" href="style.css" />
+	<script src="lucide.js"></script>
+</head>
+
+<body>
+	<div class="page">
+		<header>
+			<a href="/" class="app-logo">
+				<i data-lucide="sparkles"></i>
+			</a>
+
+			<ul class="nav-options">
+				<li>
+					<a href="#">Plans</a>
+				</li>
+				<li>
+					<a href="#">Support</a>
+				</li>
+			</ul>
+		</header>
+
+		<aside>
+			<label htmlfor="menu-trigger-control" title="Expand">
+				<i data-lucide="panel-left-open" class="open-icon"></i>
+				<i data-lucide="x" class="close-icon"></i>
+				<input id="menu-trigger-control" />
+			</label>
+
+			<div class="menu-options">
+				<ul class="main-options">
+					<li title="Home">
+						<i data-lucide="home"></i>
+						<span>Home</span>
+					</li>
+					<li title="Profile">
+						<i data-lucide="user"></i>
+						<span>Profile</span>
+					</li>
+					<li title="Photos">
+						<i data-lucide="camera"></i>
+						<span>Photos</span>
+					</li>
+					<li title="Settings">
+						<i data-lucide="settings"></i>
+						<span>Settings</span>
+					</li>
+				</ul>
+
+				<ul class="extra-options">
+					<li title="Logout">
+						<i data-lucide="log-out"></i>
+						<span>Logout</span>
+					</li>
+				</ul>
+			</div>
+		</aside>
+
+		<main>
+			<h1>MAIN CONTENT</h1>
+
+			<div class="cards-container">
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+				<div class="card"></div>
+			</div>
+
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur recusandae est reprehenderit beatae accusamus ut veritatis, repellendus animi omnis praesentium molestiae quas quis, distinctio aut ratione voluptate consequatur impedit error!</p>
+		</main>
+	</div>
+
+	<script>
+		lucide.createIcons()
+	</script>
+</body>
+</html>
