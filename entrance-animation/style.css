@@ -3,7 +3,7 @@
 	flex-direction: column;
 
 	h2 {
-		animation: reveal 0.5s ease-in-out;
+		animation: reveal 0.5s ease-in-out backwards;
 		animation-timeline: view();
 		animation-range: 0% 40%; /* Inicia no ponto inferior da tela e termina em 40% da altura */
 		border-bottom: solid 3px gold;

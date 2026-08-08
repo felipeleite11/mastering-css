@@ -1,0 +1,25 @@
+Hero section com slider transicionado
+https://www.youtube.com/watch?v=XEIMIfJb5d0
+
+Transição entre páginas com CSS
+https://www.youtube.com/watch?v=t18IKha9Ikc
+https://www.youtube.com/watch?v=caXbgH-cZGQ
+https://nextjs.org/docs/app/guides/view-transitions#step-1-morph-a-thumbnail-into-a-hero-image
+
+Hero com recortes arredondados (cutout)
+https://www.youtube.com/watch?v=i6FzSIqRuLM
+
+CSS-only carousel
+https://www.youtube.com/watch?v=gmI5nvzv170
+
+Carousel infinito com imagens
+https://www.youtube.com/watch?v=UWZEYXpScY8
+
+Efeito digitando com CSS
+https://www.youtube.com/shorts/fTOcWMD_5pk
+
+Custom cursor
+https://www.youtube.com/watch?v=rfpRZ2t_BrQ
+
+Swup (page transitions)
+https://www.youtube.com/watch?v=arcAwXYFChQ&t=2s

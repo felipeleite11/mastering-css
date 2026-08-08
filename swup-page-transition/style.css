@@ -1,0 +1,158 @@
+header {
+	display: flex;
+	position: sticky;
+	top: 0;
+	background-color: #141414;
+	align-items: center;
+	gap: 1.5rem;
+	padding: 1rem 2rem;
+	font-size: 0.8rem;
+
+	nav {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	> a:first-child {
+		margin-right: auto;
+	}
+}
+
+section {
+	min-height: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+	font-weight: bold;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	padding: 4rem 0;
+
+	h1 {
+		font-size: 1.8rem;
+	}
+
+	h2 {
+		font-size: 1.4rem;
+	}
+
+	a {
+		font-size: 1rem;
+		font-weight: 400;
+	}
+}
+
+footer {
+	background-color: #141414;
+	min-height: 8rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.25rem;
+	color: #fff;
+}
+
+@keyframes rotate360 {
+	from {
+		transform: rotate(270deg);
+	}
+}
+
+@keyframes zoomIn {
+	from {
+		transform: scale(0);
+	}
+}
+
+.overlay {
+	background-color: rgb(73.725891%, 85.490417%, 95.294189%);
+	width: 100%;
+	height: 100dvh;
+	position: fixed;
+	inset: 0;
+	transform: translateY(-100%);
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	justify-content: center;
+	align-items: center;
+
+	> span {
+		color: #53391f;
+		font-weight: bold;
+		font-size: 2rem;
+	}
+}
+
+.transition-image {
+	border-radius: 0.5rem;
+}
+
+html {
+	&.is-changing body {
+		overflow: hidden;
+
+		.transition-page,
+		.transition-title,
+		.transition-image {
+			transition: all .5s;
+		}
+
+		.overlay {
+			transition: all .5s;
+		}
+	}
+ 
+	/* Para que a animação de entrada da página seja o reverso da animação de saída da primeira página */
+	/* Nesse caso, basta usar o seletor .is-animating e aplicar as mudanças visuais */
+	&.is-animating {
+		.transition-title {
+			transform: scale(0.3);
+		}
+	}
+
+	&.is-animating {
+		&.is-leaving {
+			.transition-page {
+				opacity: 0;
+				transform: translateY(10rem) rotate(10deg);
+			}
+		}
+
+		&.is-rendering {
+			.transition-page {
+				opacity: 0;
+				transform: translateY(-10rem) rotate(-10deg);
+			}
+		}
+	}
+
+	&.is-leaving .overlay {
+		transform: translateY(0);
+	
+		> img {
+			animation: rotate360 .5s;
+		}
+
+		> span {
+			animation: zoomIn .5s;
+		}
+	}
+
+	&.is-rendering .overlay {
+		transform: translateY(100%);
+	}
+
+	&.is-animating.is-leaving .transition-image {
+		transform: translateX(-100%) rotate(-50deg);
+	}
+
+	&.is-animating.is-rendering .transition-image {
+		transform: translateX(100%) rotate(50deg);
+		opacity: 0;
+	}
+}
+

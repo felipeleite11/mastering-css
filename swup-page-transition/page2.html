@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SWUP</title>
+	<link rel="stylesheet" href="../normalization.css" />
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<header>
+		<a href="#">Logo</a>
+		<nav>
+			<a href="#">Link</a>
+		</nav>
+	</header>
+
+	<main id="swup" class="transition-page">
+		<section style="background-color: #470c0c">
+			<h1 class="transition-title">View Transition</h1>
+			<h2>Page 2</h2>
+
+			<div style="display: flex; flex-direction: column; gap: 16px">
+				<a href="index.html">Go to Home</a>
+
+				<img src="image.jpg" alt="" class="transition-image" style="width: 100px" />
+			</div>
+		</section>
+	</main>
+
+	<div class="overlay">
+		<img src="coffee.svg" style="width: 200px" alt="" />
+		<span>Coffee</span>
+	</div>
+
+	<footer id="footer">
+		<span>Footer</span>
+	</footer>
+
+	<script src="https://unpkg.com/swup@4"></script>
+	<script src="script.js" type="module"></script>
+</body>
+</html>
