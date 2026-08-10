@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Page transitions</title>
+	<link rel="stylesheet" href="../normalization.css" />
+	<link rel="stylesheet" href="style.css" />
+	<link rel="preload" href="img3.jpg" as="image" />
+</head>
+<body>
+	<div id="progress"></div>
+
+	<div id="arrow"></div>
+
+	<header>
+		<a href="#">Logo</a>
+		<nav>
+			<a href="/">Sair</a>
+		</nav>
+	</header>
+
+	<main style="background-color: #470c0c; position: relative">
+		<img src="img3.jpg" alt="" class="large-image" style="view-transition-name: image-3-transition" />
+
+		<div style="z-index: 2; color: #424242">
+			<h1>View Transition</h1>
+
+			<a href="index.html" class="button">Voltar</a>
+		</div>
+	</main>
+
+	<footer id="footer">
+		<span>Footer</span>
+	</footer>
+</body>
+</html>

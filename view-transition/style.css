@@ -1,0 +1,142 @@
+/* Evita a criação da barra de rolagem lateral por conta de uma animação. */
+/* Reserva automaticamente o espaço necessário para a barra de rolagem, evitando layout-shift (apareceimento da rolagem somente durante um instante) */
+html {
+	scrollbar-gutter: stable;
+}
+
+/* Ativa a navegação suave */
+@view-transition {
+	navigation: auto;
+}
+
+/* Tempo de animação padrão, que será aplicado a todas as transições. Pode ser sobrescrito facilmente. */
+/* ::view-transition-group(root) {
+	animation-duration: .6s;
+} */
+
+/* Animando todo o conteúdo de main */
+main {
+	view-transition-name: section-transition;
+}
+::view-transition-group(section-transition) {
+	animation-duration: .6s;
+}
+::view-transition-old(section-transition) {
+	animation: out-animation-01 .5s ease forwards;
+}
+::view-transition-new(section-transition) {
+	animation: in-animation-01 .5s ease forwards;
+}
+
+/* Animando imagens */
+::view-transition-old(image-transition),
+::view-transition-new(image-transition) {
+  animation: animation-02 0.4s ease-in;
+}
+::view-transition-image-pair(image-transition) {
+    border-radius: 6px;
+    overflow: clip;
+}
+
+/* Keyframes */
+@keyframes in-animation-01 {
+	from {
+		filter: blur(10px) grayscale();
+	}
+}
+@keyframes out-animation-01 {
+	to {
+		filter: blur(10px) grayscale();
+	}
+}
+@keyframes animation-02 {
+	from {
+		filter: blur(10px);
+	}
+	to {
+		filter: blur(0);
+	}
+}
+
+/* Layout básico */
+img {
+	object-fit: contain;
+	border-radius: 6px;
+
+	&.small-image { 
+		width: 100px; 
+	}
+	&.large-image { 
+		width: 100%; 
+		height: 100%; 
+		position: absolute; 
+		top: 0; 
+		object-fit: cover;
+	}
+}
+
+header {
+	display: flex;
+	position: sticky;
+	top: 0;
+	background-color: #141414;
+	align-items: center;
+	gap: 1.5rem;
+	padding: 1rem 2rem;
+	font-size: 0.8rem;
+
+	nav {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	> a:first-child {
+		margin-right: auto;
+	}
+}
+
+main {
+	min-height: 100dvh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+	font-weight: bold;
+	background-color: #202020;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+
+	h1 {
+		font-size: 1.8rem;
+		padding: 16px;
+		background-color: #c2c2c2;
+		border-radius: 6px;
+		color: #242424;
+	}
+
+	.button {
+		font-size: 1rem;
+		font-weight: 400;
+		background-color: #fff;
+		color: #424242;
+		padding: 12px;
+		border-radius: 6px;
+		transition: opacity 0.3s;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}
+
+footer {
+	background-color: #141414;
+	min-height: 8rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.25rem;
+	color: #fff;
+}

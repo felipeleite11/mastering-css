@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Starting style</title>
+	<link rel="stylesheet" href="../normalization.css" />
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+	<div class="card">
+		<p>Este card usa:</p>
+		<div class="code">@starting-style {
+	opacity: 0;
+	transform: translate(50%, 100%) rotate(90deg);
+}</div>
+	</div>
+
+	<button class="open">Abrir diálogo</button>
+
+	<dialog id="modal">
+		<div class="modal-content">
+			<header>
+				<h2>Olá!</h2>
+				<button class="close">
+					<img src="close.svg" alt="Fechar" />
+				</button>
+			</header>
+
+			<p>Este diálogo usa:</p>
+			<div class="code"><b>@starting-style</b> {
+	opacity: 0;
+	transform: translateY(200px) scale(0.8) rotate(-15deg);
+}</div>
+		</div>
+	</dialog>
+
+	<script>
+		const dialog = document.querySelector('#modal')
+
+		document.querySelector('.open').onclick = () => {
+			dialog.showModal()
+		}
+
+		document.querySelector('.close').onclick = () => {
+			dialog.classList.add('closing');
+
+			dialog.addEventListener(
+				'transitionend',
+				() => {
+					dialog.classList.remove('closing')
+					dialog.close()
+				},
+				{ once: true }
+			)
+		}
+	</script>
+</body>
+
+</html>

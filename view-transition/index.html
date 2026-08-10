@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Page transitions</title>
+	<link rel="stylesheet" href="../normalization.css" />
+	<link rel="stylesheet" href="style.css" />
+	<link rel="preload" href="img1.jpg" as="image" />
+	<link rel="preload" href="img2.jpg" as="image" />
+	<link rel="preload" href="img3.jpg" as="image" />
+</head>
+<body>
+	<div id="progress"></div>
+
+	<div id="arrow"></div>
+
+	<header>
+		<a href="#">Logo</a>
+		<nav>
+			<a href="/">Sair</a>
+		</nav>
+	</header>
+
+	<main>
+		<h1>View Transition</h1>
+
+		<a href="page.html" class="button">Page transition</a>
+
+		<div style="display: flex; gap: 24px; align-items: start; margin-top: 16px">
+			<a href="page1.html">
+				<img src="img1.jpg" alt="" class="small-image" style="view-transition-name: image-1-transition" />
+			</a>
+			<a href="page2.html">
+				<img src="img2.jpg" alt="" class="small-image" style="view-transition-name: image-2-transition" />
+			</a>
+			<a href="page3.html">
+				<img src="img3.jpg" alt="" class="small-image" style="view-transition-name: image-3-transition" />
+			</a>
+		</div>
+	</main>
+
+	<footer id="footer">
+		<span>Footer</span>
+	</footer>
+</body>
+</html>
