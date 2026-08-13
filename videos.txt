@@ -1,13 +1,8 @@
+CSS attr() function
+https://www.youtube.com/watch?v=MA4opfs5IMM
+
 CSS - At rules:
 https://chatgpt.com/c/6a789322-aee0-83e9-aad6-ac43d8e603fe
-
-Hero section com slider transicionado
-https://www.youtube.com/watch?v=XEIMIfJb5d0
-
-Transição entre páginas com CSS
-https://www.youtube.com/watch?v=t18IKha9Ikc
-https://www.youtube.com/watch?v=caXbgH-cZGQ
-https://nextjs.org/docs/app/guides/view-transitions#step-1-morph-a-thumbnail-into-a-hero-image
 
 Hero com recortes arredondados (cutout)
 https://www.youtube.com/watch?v=i6FzSIqRuLM

@@ -1,0 +1,232 @@
+:root {
+	--card-height: 150px;
+	--card-width: 100px;
+	--distance: calc(100% + 16px);
+	--dashed-radius: 10px;
+	--card-radius: 6px;
+}
+
+body {
+	padding: 1rem 3rem 4rem;
+	min-height: 100dvh;
+	height: calc(var(--card-height) * 7);
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	gap: calc(var(--card-height) + 20px);
+}
+
+.card-container {
+	position: relative;
+	perspective: 1000px;
+}
+
+.dashed {
+	position: absolute;
+	border: dashed 2px #ffd70055;
+	border-radius: var(--dashed-radius);
+	height: calc(var(--card-height) + 8px);
+	width: calc(var(--card-width) + 8px);
+
+	&.right {
+		transform: translateX(var(--distance));
+		border: dashed 2px #44e76877;
+	}
+}
+
+.card {
+	position: absolute;
+	height: var(--card-height);
+	width: var(--card-width);
+	border-radius: var(--card-radius);
+	top: 4px;
+	left: 4px;
+	transition: all .3s;
+	font-family: "Orbitron", sans-serif;
+	background-image: linear-gradient(to right, #3979d8, #0346aa);
+	z-index: 1;
+	cursor: pointer;
+	
+	.background {
+		position: absolute;
+		object-fit: cover;
+		height: 100%;
+		opacity: 0.5;
+		z-index: 1;
+	}
+
+	.content {
+		position: absolute;
+		height: var(--card-height);
+		width: var(--card-width);
+		border-radius: var(--card-radius);
+		overflow: hidden;
+		transition: all .3s;
+		
+		box-shadow: inset 4px 0 0 #f1d11c, inset 8px 0 0 color-mix(in srgb, #44c511 100%, transparent);
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-image: linear-gradient(
+				to right,
+				#5bbbf3,
+				#0066ff
+			);
+			opacity: 0;
+			transition: opacity 1000ms ease;
+			pointer-events: none;
+			z-index: 1;
+		}
+
+		> .number {
+			position: absolute;
+			bottom: 0;
+			right: 10%;
+			font-size: calc(var(--card-height) / 3);
+			z-index: 2;
+			font-weight: bold;
+			text-shadow: 2px 2px 2px #0002;
+			transition: all .2s ease-out;
+		}
+	}
+	
+	&.right {
+		animation: slideRight .4s ease-in forwards;
+
+		&.moving {
+			animation: slideLeft .4s ease-in forwards;
+			
+			> .image {
+				opacity: 1;
+			}
+		}
+	}
+	
+	> .image {
+		position: absolute;
+		width: var(--card-width);
+		height: var(--card-height);
+		object-fit: contain;
+		transition: all .3s;
+		z-index: 2;
+		pointer-events: none;
+		filter: drop-shadow(0 0 0 transparent) brightness(0);
+		transform: scale(0.8);
+	}
+
+	&.right {
+		> .image {
+			transition: all .5s;
+			filter: drop-shadow(0 10px 20px #000a) brightness(1);
+		}
+	}
+
+	&:hover {
+		box-shadow:
+			0 4px 8px rgba(0, 255, 255, 0.35),
+			0 10px 20px rgba(0, 255, 255, 0.25),
+			0 20px 40px rgba(0, 255, 255, 0.15);
+		transform: rotateY(15deg) rotateX(10deg) rotateZ(7deg);
+
+		> .image {
+			transform: translateY(calc(var(--card-height) / 10)) translateX(calc(var(--card-width) / 4 * -1)) rotate(-20deg) scale(1.2);
+			filter: drop-shadow(2px 2px 2px #0004) brightness(1);
+		}
+		
+		> .content {
+			border-radius: var(--card-radius);
+			
+			&::before {
+				opacity: 1;
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				inset: -50%;
+				background: linear-gradient(
+					45deg,
+					transparent 0%,
+					#fff1 40%,
+					#fff6 50%,
+					#fff1 60%,
+					transparent 100%
+				);
+				z-index: 1;
+				pointer-events: none;
+				animation: shine 800ms ease-out forwards;
+			}
+
+			.number {
+				transform: rotateZ(370deg) scale(1.15);
+				text-shadow: 2px 2px 3px #0006;
+			}
+		}
+
+		&::after {
+			opacity: 1;
+		}
+	}
+
+	&.right {
+		> .image {
+			transform: scale(1);
+		}
+
+		&:hover {
+			> .image {
+				transform: translateY(0) translateX(0) rotate(0) scale(1);
+			}
+
+			.number {
+				transform: rotateZ(0) scale(1);
+				text-shadow: 0 0 0 transparent;
+			}
+		}
+	}
+}
+
+@keyframes slideRight {
+	0% {
+		transform: translateX(0) rotateY(0);
+	}
+	50% {
+		transform: rotateY(-60deg) rotateX(375deg) scale(1.14);
+	}
+	100% {
+		transform: translateX(calc(var(--distance) + 8px)) rotateY(0);
+	}
+}
+
+@keyframes slideLeft {
+	0% {
+		transform: translateX(calc(var(--distance) + 8px)) rotateY(0);
+	}
+	50% {
+		transform: rotateY(-60deg) rotateX(15deg);
+	}
+	100% {
+		transform: translateX(0) rotateY(0);
+	}
+}
+
+@keyframes shine {
+    from {
+        left: -200%;
+		top: 0%;
+		opacity: 0;
+    }
+	50% {
+		opacity: 1;
+	}
+    to {
+        left: 0%;
+		top: -230%;
+		opacity: 0;
+    }
+}
+

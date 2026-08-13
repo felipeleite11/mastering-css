@@ -1,0 +1,5 @@
+Transição entre páginas com CSS
+https://www.youtube.com/watch?v=XH1G58QqPIM
+https://www.youtube.com/watch?v=t18IKha9Ikc
+https://www.youtube.com/watch?v=caXbgH-cZGQ
+https://nextjs.org/docs/app/guides/view-transitions#step-1-morph-a-thumbnail-into-a-hero-image

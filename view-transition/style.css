@@ -4,57 +4,59 @@ html {
 	scrollbar-gutter: stable;
 }
 
-/* Ativa a navegação suave */
-@view-transition {
-	navigation: auto;
-}
-
-/* Tempo de animação padrão, que será aplicado a todas as transições. Pode ser sobrescrito facilmente. */
-/* ::view-transition-group(root) {
-	animation-duration: .6s;
-} */
-
-/* Animando todo o conteúdo de main */
-main {
-	view-transition-name: section-transition;
-}
-::view-transition-group(section-transition) {
-	animation-duration: .6s;
-}
-::view-transition-old(section-transition) {
-	animation: out-animation-01 .5s ease forwards;
-}
-::view-transition-new(section-transition) {
-	animation: in-animation-01 .5s ease forwards;
-}
-
-/* Animando imagens */
-::view-transition-old(image-transition),
-::view-transition-new(image-transition) {
-  animation: animation-02 0.4s ease-in;
-}
-::view-transition-image-pair(image-transition) {
-    border-radius: 6px;
-    overflow: clip;
-}
-
-/* Keyframes */
-@keyframes in-animation-01 {
-	from {
-		filter: blur(10px) grayscale();
+@media(prefers-reduced-motion: no-preference) {
+	/* Ativa a navegação suave */
+	@view-transition {
+		navigation: auto;
 	}
-}
-@keyframes out-animation-01 {
-	to {
-		filter: blur(10px) grayscale();
+
+	/* Tempo de animação padrão, que será aplicado a todas as transições. Pode ser sobrescrito facilmente. */
+	/* ::view-transition-group(root) {
+		animation-duration: .6s;
+	} */
+
+	/* Animando todo o conteúdo de main */
+	main {
+		view-transition-name: section-transition;
 	}
-}
-@keyframes animation-02 {
-	from {
-		filter: blur(10px);
+	::view-transition-group(section-transition) {
+		animation-duration: .6s;
 	}
-	to {
-		filter: blur(0);
+	::view-transition-old(section-transition) {
+		animation: out-animation-01 .5s ease forwards;
+	}
+	::view-transition-new(section-transition) {
+		animation: in-animation-01 .5s ease forwards;
+	}
+
+	/* Animando imagens */
+	::view-transition-old(image-transition),
+	::view-transition-new(image-transition) {
+	animation: animation-02 0.4s ease-in;
+	}
+	::view-transition-image-pair(image-transition) {
+		border-radius: 6px;
+		overflow: clip;
+	}
+
+	/* Keyframes */
+	@keyframes in-animation-01 {
+		from {
+			filter: blur(10px) grayscale();
+		}
+	}
+	@keyframes out-animation-01 {
+		to {
+			filter: blur(10px) grayscale();
+		}
+	}
+	@keyframes animation-02 {
+		from {
+			filter: blur(10px);
+		}
+		to {
+			filter: blur(0);
+		}
 	}
 }
 
