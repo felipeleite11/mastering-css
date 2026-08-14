@@ -11,6 +11,25 @@
 	--tooltip-text-color: #141414;
 }
 
+.wave {
+	animation: wave 1s ease-in-out infinite;
+	transform-origin: center bottom;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0) scaleY(1);
+  }
+
+  50% {
+    transform: translateY(8px) scaleY(0.96);
+  }
+
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
+}
+
 select {
 	appearance: base-select;
 	min-width: 300px;
@@ -18,12 +37,8 @@ select {
 	cursor: pointer;
 	transition: all .2s;
 	border: 0;
-	background-image: linear-gradient(220deg, var(--base-bg-color) 10%, #525199 30%, var(--base-bg-color));
 	position: relative;
-	
-	&::-webkit-scrollbar {
-		width: 2px;
-	}
+	background-image: linear-gradient(220deg, var(--base-bg-color) 10%, #525199 30%, var(--base-bg-color));
 	
 	&:hover {
 		opacity: .8;
@@ -55,8 +70,10 @@ select {
 		&::checkmark {
 			/* Remove o marcador da opção selecionada */
 			display: none;
+
 			/* Altera a cor do check, caso esteja visível */
 			/* color: greenyellow; */
+
 			/* Troca o ícone padrão por um emoji */
 			/* content: '👉'; */
 		}
@@ -105,6 +122,11 @@ select {
 	/* Plano de fundo */
 	/* background-color: var(--base-bg-color); */
 	background-image: linear-gradient(220deg, var(--base-bg-color) 10%, #525199 30%, var(--base-bg-color));
+}
+
+select.waves {
+	background-color: var(--base-bg-color) !important;
+	background: url(waves.svg) no-repeat 50% 92% / cover;
 }
 
 /* Tooltip config (optional) */

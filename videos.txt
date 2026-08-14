@@ -21,3 +21,9 @@ https://www.youtube.com/watch?v=rfpRZ2t_BrQ
 
 Swup (page transitions)
 https://www.youtube.com/watch?v=arcAwXYFChQ&t=2s
+
+Parallax
+https://codepen.io/isladjan/pen/abdyPBw
+
+Waves SVG
+https://codepen.io/liquidcharcoal/pen/rEeYrw?editors=1100
