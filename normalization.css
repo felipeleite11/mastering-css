@@ -10,6 +10,20 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   font-family: Ubuntu, sans-serif;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #727171;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #4e4e4e;
+    border-radius: 999px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgb(40, 52, 68);
+  }
 }
 
 body {
