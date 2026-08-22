@@ -1,0 +1,97 @@
+.carousel,
+.carousel-2 {
+  anchor-name: --carousel;
+  width: 100%;
+  display: flex;
+  gap: 1em;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-marker-group: after;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::scroll-button(*) {
+    border: none;
+    background-color: var(--accent);
+    font-family: Consolas;
+    font-size: 2rem;
+    color: white;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    padding-bottom: .1em;
+    cursor: pointer;
+    position: fixed;
+    position-anchor: --carousel;
+  }
+
+  &::scroll-button(left) { 
+    content: '<';
+    position-area: left center;
+    translate: 50%;
+  }
+
+  &::scroll-button(right) {
+    content: '>';
+    position-area: right center;
+    translate: -50%;
+  }
+
+  &::scroll-button(*):disabled {
+    opacity: 0.5;
+    cursor: auto;
+  }
+
+  &::scroll-marker-group {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding-top: 1.25rem;
+  }
+}
+
+.carousel-2 {
+  anchor-name: --carousel-2;
+
+  &::scroll-button(*) {
+    position-anchor: --carousel-2;
+  }
+}
+
+.card {
+  scroll-snap-align: start;
+  flex: 0 0 15rem;
+  background: var(--surface);
+  padding: 2em;
+  border-radius: .5em;
+  border: 1px solid var(--border);
+  list-style: none;
+
+  &::scroll-marker {
+    content: '';
+    height: .67rem;
+    width: .67rem;
+    border-radius: 50%;
+    background: var(--border);
+  }
+
+  &::scroll-marker:target-current {
+    background: var(--accent);
+  } 
+
+  span {
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .1rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .carousel {
+    grid-auto-columns: min(82vw, 20rem);
+  }
+}

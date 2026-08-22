@@ -1,0 +1,24 @@
+.toggle-button {
+  anchor-name: --toggle-button;
+}
+
+#menu {
+  position-anchor: --toggle-button;
+  position-area: bottom span-right;
+  
+  position-try-fallbacks: 
+    bottom span-right,
+    bottom span-left,
+    top span-right,
+    top span-left;
+
+  width: 25rem;
+  border: 1px solid var(--border);
+  padding: 1.5em;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+#menu p {
+  margin: 0;
+}

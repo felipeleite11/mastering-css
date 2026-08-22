@@ -1,6 +1,9 @@
 CSS attr() function
 https://www.youtube.com/watch?v=MA4opfs5IMM
 
+Shaders
+https://www.youtube.com/watch?v=1LABX4MiREQ
+
 CSS - At rules:
 https://chatgpt.com/c/6a789322-aee0-83e9-aad6-ac43d8e603fe
 

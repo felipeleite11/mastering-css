@@ -1,0 +1,45 @@
+.reveal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.reveal-card h3 {
+  margin: 0 0 0.5em 0;
+  font-size: 1.5rem;
+}
+
+.reveal-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.reveal-card {
+  padding: 2em;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  animation: fade-in linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 35%;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    translate: 0 3rem;
+    scale: 0.5;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0;
+    scale: 1;
+  }
+}
+
+@media (max-width: 48rem) {
+  .reveal-grid {
+    grid-template-columns: 1fr;
+  }
+}

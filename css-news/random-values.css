@@ -1,0 +1,26 @@
+.particle-section {
+  min-height: 37rem;
+  position: relative;
+}
+
+.particle {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  width: 0.75rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: float 4s ease-in-out infinite alternate;
+
+  top: random(5%, 95%);
+  left: random(5%, 95%);
+  scale: random(0.5, 1.8);
+  background: hsl(random(258, 278) 78% 68%);
+  animation-delay: random(-5s, 0s);
+  animation-duration: random(2s, 6s);
+}
+
+@keyframes float {
+  to { translate: 0 -2rem; }
+}

@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  background-color: #1b1b1b;
+}
+
+h1, a {
+  font-size: 18px;
+  color: #d9d9d9;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}

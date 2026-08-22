@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Six modern CSS interface examples on one minimal page.">
+    <title>CSS news</title>
+    <link rel="stylesheet" href="carousel.css">
+    <link rel="stylesheet" href="view-driven-animations.css">
+    <link rel="stylesheet" href="scroll-driven-animation.css">
+    <link rel="stylesheet" href="popover.css">
+    <link rel="stylesheet" href="collapsible-animation.css">
+    <link rel="stylesheet" href="autosize-textarea.css">
+    <link rel="stylesheet" href="random-values.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <main>
+      <a href="https://www.youtube.com/watch?v=6Pd6B0ZmT6s">TUTORIAL</a>
+
+      <section class="demo-section" aria-labelledby="carousel-title">
+        <h2 id="carousel-title"><span class="accent">01</span> CSS-only carousel</h2>
+
+        <ul class="carousel">
+          <li class="card">
+            <span>Item 01</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card">
+            <span>Item 02</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card">
+            <span>Item 03</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card">
+            <span>Item 04</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card">
+            <span>Item 05</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card">
+            <span>Item 06</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card">
+            <span>Item 07</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card">
+            <span>Item 08</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card">
+            <span>Item 09</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card">
+            <span>Item 10</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card">
+            <span>Item 11</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card">
+            <span>Item 12</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card">
+            <span>Item 13</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card">
+            <span>Item 14</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card">
+            <span>Item 15</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card">
+            <span>Item 16</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card">
+            <span>Item 17</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card">
+            <span>Item 18</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="demo-section" aria-labelledby="carousel-title">
+        <h2 id="carousel-title">CSS-only images carousel</h2>
+
+        <ul class="carousel-2">
+          <li class="card" style="background-image: url('https://picsum.photos/id/16/350/200.webp')">
+            <span>Item 01</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card" style="background-image: url('https://picsum.photos/id/17/350/200.webp')">
+            <span>Item 02</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card" style="background-image: url('https://picsum.photos/id/18/350/200.webp')">
+            <span>Item 03</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card" style="background-image: url('https://picsum.photos/id/19/350/200.webp')">
+            <span>Item 04</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card" style="background-image: url('https://picsum.photos/id/20/350/200.webp')">
+            <span>Item 05</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card" style="background-image: url('https://picsum.photos/id/21/350/200.webp')">
+            <span>Item 06</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="card" style="background-image: url('https://picsum.photos/id/22/350/200.webp')">
+            <span>Item 07</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="demo-section" aria-labelledby="scroll-title">
+        <h2 id="scroll-title"><span class="accent">02</span> Scroll-driven animations</h2>
+
+        <div class="reveal-grid">
+          <article class="reveal-card">
+            <h3>Lorem ipsum</h3>
+            <p>Dolor sit amet, consectetur adipiscing elit.</p>
+          </article>
+          <article class="reveal-card">
+            <h3>Lorem ipsum</h3>
+            <p>Dolor sit amet, consectetur adipiscing elit.</p>
+          </article>
+          <article class="reveal-card">
+            <h3>Lorem ipsum</h3>
+            <p>Dolor sit amet, consectetur adipiscing elit.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="demo-section" aria-labelledby="position-title">
+        <h2 id="position-title"><span class="accent">03</span>Smart Positioning</h2>
+
+        <button popovertarget="menu" class="toggle-button">Toggle Popover</button>
+
+        <div id="menu" popover>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima blanditiis sit quaerat molestiae dolorem velit!</p>
+        </div>
+
+      </section>
+
+      <section class="demo-section" aria-labelledby="accordion-title">
+        <h2 id="accordion-title"><span class="accent">04</span>Any Questions?</h2>
+
+        <details>
+          <summary>Why are the prices so good?</summary>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, ipsam. Minus ex sed amet voluptas consectetur eaque similique fuga atque tempore quis nihil magnam consequuntur totam dignissimos, maiores laudantium, repudiandae, fugit porro.</p>
+        </details>
+        <details>
+          <summary>How do I request a refund?</summary>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio pariatur temporibus ipsa blanditiis molestiae illo, omnis ad similique repellat perspiciatis cumque sed. Praesentium cumque, eveniet rerum modi aut vitae asperiores perspiciatis quae quo, ipsum ex, quibusdam a harum deleniti voluptatum. Commodi, cum! Quis eaque eum aut aspernatur autem maxime consequatur ut totam, magni, odit porro id ratione est provident officiis.</p>
+        </details>
+        <details>
+          <summary>Is there a free trial for the subscription?</summary>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam sed laborum amet saepe?</p>
+        </details>
+      </section>
+
+      <section class="demo-section" aria-labelledby="field-title">
+        <h2 id="field-title"><span class="accent">05</span>Growing Textareas</h2>
+
+        <form class="feedback-form">
+          <label for="feedback">Feedback</label>
+          <textarea id="feedback" name="feedback" placeholder="Lorem ipsum dolor sit amet..."></textarea>
+          <button type="button">Submit</button>
+        </form>
+      </section>
+
+      <section class="demo-section particle-section" aria-labelledby="random-title">
+        <h2 id="random-title"><span class="accent">06</span>Random CSS Values</h2>
+
+		<span>Até então, este recurso só funciona no Safari.</span>
+        
+        <span class="particle"></span><span class="particle"></span>
+        <span class="particle"></span><span class="particle"></span>
+        <span class="particle"></span><span class="particle"></span>
+        <span class="particle"></span><span class="particle"></span>
+        <span class="particle"></span><span class="particle"></span>
+        <span class="particle"></span><span class="particle"></span>
+        <span class="particle"></span><span class="particle"></span>
+        <span class="particle"></span><span class="particle"></span>
+        <span class="particle"></span><span class="particle"></span>
+        <span class="particle"></span><span class="particle"></span>
+        
+      </section>
+    </main>
+  </body>
+</html>

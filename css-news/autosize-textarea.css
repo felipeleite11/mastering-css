@@ -1,0 +1,45 @@
+.feedback-form {
+  display: grid;
+  max-width: 42rem;
+  gap: 0.75rem;
+}
+
+.feedback-form label {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.feedback-form textarea {
+  field-sizing: content;
+  width: 100%;
+  min-height: 8rem;
+  max-height: 24rem;
+  padding: 1rem;
+  resize: vertical;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  outline: none;
+  background: var(--surface);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.feedback-form textarea::placeholder {
+  color: var(--muted);
+}
+
+.feedback-form textarea:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.feedback-form button {
+  margin-top: .5rem;
+  justify-self: start;
+}
+
+.feedback-form button:hover,
+.feedback-form button:focus-visible {
+  background: var(--accent);
+  outline: none;
+}
